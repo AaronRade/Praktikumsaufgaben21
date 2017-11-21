@@ -134,7 +134,12 @@ public class Box {
         return result;
 	}
 
-	public static void main(String[] args) {
+    @Override
+    public String toString() {
+        return "Height: " + this.getHeight() + "\tWidth: " + this.getWidth() + "\tDepth: " + this.getDepth();
+    }
+
+    public static void main(String[] args) {
 
 		Box object = new Box(30,20,10);
 		Box f = new Box(31,21,11);
