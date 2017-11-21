@@ -143,8 +143,8 @@ public class Box {
 
 		Box object = new Box(30,20,10);
 		Box f = new Box(31,21,11);
-		System.out.println(object.encloses(f));
-		System.out.println(f.encloses(object));
+		System.out.println(f);
+		System.out.println(object);
 		
 		
 	}
