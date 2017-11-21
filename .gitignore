@@ -1,0 +1,8 @@
+# Dateien und Ordner, welche von git ignoriert werden
+
+bin/
+.idea/
+.settings/
+.project
+.classpath
+Praktikumsaufgaben21.iml
