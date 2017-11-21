@@ -38,14 +38,13 @@ public class Box {
 	}
 
 	public int compareTo(Box f) {
-		int result;
+		int result = 0;
 		if(this.getVolumeSize()<f.getVolumeSize()) {
 			result = -1;
 		}
 		else if(this.getVolumeSize()>f.getVolumeSize()) {
 			result = 1;
 		}
-		else result = 0;
 		return result;
 	}
     
