@@ -50,6 +50,7 @@ public class Box {
 	}
     
 	public boolean encloses(Box b) {
+		boolean result = false;
         double max1, min1, mid1, max2, mid2, min2;
             
         if (this.getWidth() >= this.getHeight() && this.getWidth() >= this.getDepth()) {
@@ -123,6 +124,14 @@ public class Box {
                 }
             }
         }
+        if (max1 > max2) {
+        	if(mid1>mid2) {
+        		if(min1>min2) {
+        			result = true;
+        		}
+        	}
+        }
+        return result;
 	}
 
 	public static void main(String[] args) {
