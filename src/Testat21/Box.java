@@ -49,14 +49,80 @@ public class Box {
 		return result;
 	}
     
-	public boolean encloses(Box f) {
-		boolean result = false;
-		int a = this.compareTo(f);
-		if (a > 0) {
-			result = true;
-		}
-		return result;
-		
+	public boolean encloses(Box b) {
+        double max1, min1, mid1, max2, mid2, min2;
+            
+        if (this.getWidth() >= this.getHeight() && this.getWidth() >= this.getDepth()) {
+            max1 = this.getWidth();
+            if (this.getHeight() >= this.getDepth()) {
+                mid1 = this.getHeight();
+                min1 = this.getDepth();
+            }
+            else {
+                mid1 = this.getDepth();
+                min1 = this.getHeight();
+            }
+        }
+        else {
+            if (this.getHeight() >= this.getDepth() && this.getHeight() >= this.getWidth()) {
+                max1 = this.getHeight();  
+                if (this.getWidth() >= this.getDepth()) {
+                    mid1 = this.getWidth();
+                    min1 = this.getDepth();
+                }
+                else {
+                    mid1 = this.getDepth();
+                    min1 = this.getWidth();                 
+                }
+            }
+            else {
+                max1 = this.getDepth();
+                if (this.getWidth() >= this.getHeight()) {
+                    mid1 = this.getWidth();
+                    min1 = this.getHeight();
+                }
+                else {
+                    mid1 = this.getHeight();
+                    min1 = this.getWidth();
+                }
+            }
+        }
+        
+        if (b.getWidth() >= b.getHeight() && b.getWidth() >= b.getDepth()) {
+            max2 = b.getWidth();
+            if (b.getHeight() >= b.getDepth()) {
+                mid2 = b.getHeight();
+                min2 = b.getDepth();
+            }
+            else {
+                mid2 = b.getDepth();
+                min2 = b.getHeight();
+            }
+        }
+        else {
+            if (b.getHeight() >= b.getDepth() && b.getHeight() >= b.getWidth()) {
+                max2 = b.getHeight();  
+                if (b.getWidth() >= b.getDepth()) {
+                    mid2 = b.getWidth();
+                    min2 = b.getDepth();
+                }
+                else {
+                    mid2 = b.getDepth();
+                    min2 = b.getWidth();                 
+                }
+            }
+            else {
+                max2 = b.getDepth();
+                if (b.getWidth() >= b.getHeight()) {
+                    mid2 = b.getWidth();
+                    min2 = b.getHeight();
+                }
+                else {
+                    mid2 = b.getHeight();
+                    min2 = b.getWidth();
+                }
+            }
+        }
 	}
 
 	public static void main(String[] args) {
