@@ -48,9 +48,7 @@ public class Box {
 		else result = 0;
 		return result;
 	}
-	
-	//genau hier hat Tim einen fahren gelassen
-
+    
 	public boolean encloses(Box f) {
 		boolean result = false;
 		int a = this.compareTo(f);
