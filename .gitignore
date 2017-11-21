@@ -6,3 +6,4 @@ bin/**
 .project
 .classpath
 Praktikumsaufgaben21.iml
+*.class
