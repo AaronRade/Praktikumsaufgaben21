@@ -140,11 +140,12 @@ public class Box {
 
     public static void main(String[] args) {
 
-		Box object = new Box(30,20,10);
-		Box f = new Box(31,21,11);
-		System.out.println(f);
-		System.out.println(object);
-		
+		Box box1 = new Box(30,20,10);
+		Box box2 = new Box(31,21,11);
+		System.out.println(box2);
+		System.out.println(box1);
+        System.out.println(box2.encloses(box1));
+        System.out.println(box1.encloses(box2));
 		
 	}
 
