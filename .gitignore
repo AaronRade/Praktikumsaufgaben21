@@ -1,6 +1,6 @@
 # Dateien und Ordner, welche von git ignoriert werden
 
-bin/
+bin/**
 .idea/
 .settings/
 .project
