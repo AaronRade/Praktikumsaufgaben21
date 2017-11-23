@@ -15,5 +15,25 @@ public class PointInTime {
 		}
 		
 	}
+	
+	public String toString() {
+		return this.year+"/"+this.day+"/"+this.hour;
+	}
+	
+	public PointInTime clone() {
+		PointInTime cloned=new PointInTime(this.year, this.day, this.hour);
+		return cloned;
+	}
+	
+	public PointInTime change(int value) {
+		if(this.hour+value>23) {
+			if(this.day+1>356) {
+				this.year+=1;
+			}
+			else this.day+=1;
+		}
+		else this.hour+=value;
+		return this;
+	}
 
 }
