@@ -7,29 +7,35 @@ public class Period {
 		if (minuten<0) {
 			minuten=0;
 		}
-		this.stunden=0;
-		this.minuten=minuten;
+		else if (minuten<59) {
+			this.stunden = minuten/60;
+			this.minuten = minuten%60;
+		}
+		else {
+			this.stunden=0;
+			this.minuten=minuten;
+		}
 	}
 	
 	public Period(int stunden, int minuten) {
 		if (minuten<0) {
 			minuten=0;
 		}
-		this.stunden=stunden;
-		this.minuten=minuten;
-		
+		else if (minuten<59) {
+			this.stunden = stunden+minuten/60;
+			this.minuten = minuten%60;
+		}
+		else {
+			this.stunden=stunden;
+			this.minuten=minuten;
+		}
 	}
 	
 	public int getMinutes() {
 		return this.stunden*60+this.minuten;
 	}
 	
-	public int getHours() {
-		if (this.stunden==0) {
-			return this.minuten/60;
-		}
-		else return this.stunden;
-	}
+	public int getHours() { return this.getMinutes()/60; }
 	
 	public int getMinorMinutes() {
 		return this.getMinutes()-getHours()*60;
@@ -50,8 +56,6 @@ public class Period {
 	}
 
 	@Override
-	public String toString() {
-		return this.stunden+":"+this.minuten;
-	}
+	public String toString() { return this.getHours()+":"+this.getMinorMinutes();	}
 
 }
