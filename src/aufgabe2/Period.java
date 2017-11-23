@@ -32,7 +32,7 @@ public class Period {
 	}
 	
 	public int getMinorMinutes() {
-		return this.minuten;
+		return this.getMinutes()-getHours()*60;
 	}
 
 	@Override
