@@ -1,7 +1,7 @@
 package aufgabe2;
 
 public class PointInTime {
-	private int year, day, hour;
+	private int year, day, hour = 0;
 	
 	public PointInTime(int year, int day, int hour) {
 		if(year>999&&year<10000) {
