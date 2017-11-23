@@ -26,22 +26,22 @@ public class Period {
 		
 		//expected results commented
 		
-		System.out.println(Period1);
+		System.out.println("Period1: "+Period1);
 		// 2:40
-		System.out.println(Period2);
+		System.out.println("Period2: "+Period2);
 		// 1:30
-		System.out.println(Period1.getMinutes());
+		System.out.println("Period1 Minuten insgesamt: "+Period1.getMinutes());
 		// 160
-		System.out.println(Period1.getHours());
+		System.out.println("Period1 Stunden: "+Period1.getHours());
 		// 2
-		System.out.println(Period1.getMinorMinutes());
+		System.out.println("Period1 Minuten: "+Period1.getMinorMinutes());
 		// 40
-		System.out.println(Period2.clone());
+		System.out.println("Period2 cloned: "+Period2.clone());
 		// 1:30
-		System.out.println(Period2.change(10));
+		System.out.println("Period2 change mit 10: "+Period2.change(10));
 		// 1:40
-		System.out.println(Period2.change(30));
-		// 2:00
+		System.out.println("Period1 change mit 70: "+Period1.change(70));
+		// 3:50
 		
 	}
 	
@@ -68,15 +68,11 @@ public class Period {
 	public Period change(int value) {
 		if(value>0) {
 			this.stunden+=(this.getMinorMinutes()+value)/60;
-			if((this.getMinorMinutes()+value)%60==0) {
-				this.stunden+=1;
-				this.minuten=0;
-			}
-			else this.minuten=(this.getMinorMinutes()+value)%60;
+			value = value%60;
+			this.minuten+=value;
 		}
 		return this;
 	}
-	@Override
 	
 	public String toString() {
 		return this.stunden+":"+this.minuten;
