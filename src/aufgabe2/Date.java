@@ -12,9 +12,20 @@ public class Date {
 
     }
 
+    public PointInTime getBegin(){return begin;}
+    public Period getLength(){return length;}
+    public String getLabel(){return label;}
+
     public void set(PointInTime begin, Period length) {
         this.begin = begin;
         this.length = length;
+    }
+
+    public Date change(int value){
+        if(begin!=null) {
+            this.begin.change(value);
+        }
+        return this;
     }
 
     @Override
