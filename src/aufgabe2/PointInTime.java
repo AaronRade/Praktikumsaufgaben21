@@ -15,14 +15,17 @@ public class PointInTime {
 		}
 		
 	}
+
+	public int getYear(){return year;}
+	public int getDay(){return day;}
+	public int getHour(){return hour;}
 	
 	public String toString() {
 		return this.year+"/"+this.day+"/"+this.hour;
 	}
 	
 	public PointInTime clone() {
-		PointInTime cloned=new PointInTime(this.year, this.day, this.hour);
-		return cloned;
+		return new PointInTime(this.year, this.day, this.hour);
 	}
 	
 	public PointInTime change(int value) {
