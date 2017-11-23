@@ -27,6 +27,19 @@ public class TestAllClasses {
         System.out.println("Period1 change mit 70: "+period1.change(70));
         // 3:50
 
+        PointInTime begin1 = new PointInTime(2017, 204, 14);
+
+        PointInTime begin2 = begin1.clone();
+
+        System.out.println("Begin1: "+begin1);
+        // 2017/204/14
+        System.out.println("Begin2: "+begin2);
+        // 2017/204/14
+        System.out.println("Begin1 + 11 Stunden: "+begin1.change(11));
+        // 2017/205/1
+
+
+
         Date date1 = new Date(null, period1, "Dies ist ein Test");
 
         Date date2 = date1.clone();

@@ -19,11 +19,13 @@ public class PointInTime {
 	public int getYear(){return year;}
 	public int getDay(){return day;}
 	public int getHour(){return hour;}
-	
+
+	@Override
 	public String toString() {
 		return this.year+"/"+this.day+"/"+this.hour;
 	}
-	
+
+	@Override
 	public PointInTime clone() {
 		return new PointInTime(this.year, this.day, this.hour);
 	}
@@ -33,7 +35,10 @@ public class PointInTime {
 			if(this.day+1>356) {
 				this.year+=1;
 			}
-			else this.day+=1;
+			else {
+				this.day += 1;
+				this.hour=(this.hour+value)-24;
+			}
 		}
 		else this.hour+=value;
 		return this;
