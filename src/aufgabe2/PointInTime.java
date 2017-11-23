@@ -4,13 +4,13 @@ public class PointInTime {
 	private int year, day, hour;
 	
 	public PointInTime(int year, int day, int hour) {
-		if(year<10000&&year>999) {
+		if(year>999&&year<10000) {
 			this.year=year;
 		}
-		if(day<357) {
+		if(day>0&&day<356) {
 			this.day=day;
 		}
-		if(hour<24&&hour>-1) {
+		if(hour>-1&&hour<24) {
 			this.hour=hour;
 		}
 		
