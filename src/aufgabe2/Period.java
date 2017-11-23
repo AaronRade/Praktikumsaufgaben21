@@ -59,10 +59,10 @@ public class Period {
 	public int getMinorMinutes() {
 		return this.minuten;
 	}
-	
+
+	@Override
 	public Period clone(){
-		Period cloned = new Period(this.getHours(),this.getMinorMinutes());
-		return cloned;
+		return new Period(this.getHours(), this.getMinorMinutes());
 	}
 	
 	public Period change(int value) {
@@ -73,7 +73,8 @@ public class Period {
 		}
 		return this;
 	}
-	
+
+	@Override
 	public String toString() {
 		return this.stunden+":"+this.minuten;
 	}
