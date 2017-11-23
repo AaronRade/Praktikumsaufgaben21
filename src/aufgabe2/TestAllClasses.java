@@ -86,6 +86,38 @@ public class TestAllClasses {
         Length: 1:40
         */
 
+        System.out.println("-----------------------");
+
         System.out.println("date3 verschoben um 4 Stunden:\n"+date3.change(4));
+
+        System.out.println("-----------------------");
+
+        //Test wie in der PDF gewollt
+
+        Period testLength1=new Period(1,30);
+        Period testLength2=testLength1.clone();
+
+        testLength2.change(15);
+
+        System.out.println("testLength1:\t"+testLength1+"\n"+"testLength2:\t"+testLength2);
+
+        PointInTime testBegin1=new PointInTime(2017, 12, 8);
+        PointInTime testBegin2= testBegin1.clone();
+
+        testBegin2.change(3);
+
+        System.out.println("testBegin1:\t"+testBegin1+"\n"+"testBegin2:\t"+testBegin2);
+
+        Date testDate1=new Date(testBegin1, testLength1, "Test1");
+        Date testDate2=new Date(testBegin2, testLength2, "Test2");
+
+        System.out.println("Test1:\n"+testDate1+"\nTest2:\n"+testDate2);
+
+
+
+
+
+
+
     }
 }
